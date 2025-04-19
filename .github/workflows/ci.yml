@@ -48,7 +48,7 @@ jobs:
         run: cargo llvm-cov --no-fail-fast --workspace --lcov --output-path lcov.info
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@ad3126e916f78f00edff4ed0317cf185271ccc2d # v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # Repository secret required
           files: lcov.info
