@@ -23,13 +23,13 @@ jobs:
       # Potentially write permissions needed by codecov action depending on its method
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Set up Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
       - name: Cache Cargo dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4
         with:
           path: |
             ~/.cargo/bin/
@@ -48,7 +48,7 @@ jobs:
         run: cargo llvm-cov --no-fail-fast --workspace --lcov --output-path lcov.info
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238 # v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # Repository secret required
           files: lcov.info
@@ -59,13 +59,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Set up Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
       - name: Cache Cargo dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4
         with:
           path: |
             ~/.cargo/bin/
